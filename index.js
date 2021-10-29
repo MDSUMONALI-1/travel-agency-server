@@ -20,13 +20,13 @@ async function run() {
     }
     finally {
         // await client.close();
-    }
+    }i
 }
 
 run().catch(console.dir);
 
 app.get('/', (req, res) => {
-    res.send('server is running');
+    res.send('assas rver is running');
 });
 app.get('/hello', (req, res) => {
     res.send('server is running');
