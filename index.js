@@ -36,16 +36,7 @@ async function run() {
             res.json(service);
         })
 
-        // POST API
-        app.post('/services', async (req, res) => {
-            const service =  req.body;
-            console.log('post hitted ', service);
-
-            const result = await servicesCollection.insertOne(service);
-            console.log(result);
-            res.json(result)
-        });
-
+        
         // DELETE API
         app.delete('/services/:id', async (req, res) => {
             const id = req.params.id;
