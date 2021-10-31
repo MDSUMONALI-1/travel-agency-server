@@ -4,7 +4,7 @@ require('dotenv').config();
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 6000;
 
 // middleware
 app.use(cors());
@@ -39,7 +39,7 @@ async function run() {
         // POST API
         app.post('/services', async (req, res) => {
             const service =  req.body;
-            console.log('hit the post api', service);
+            console.log('post hitted ', service);
 
             const result = await servicesCollection.insertOne(service);
             console.log(result);
@@ -71,5 +71,5 @@ app.get('/hello', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log('Server running at port', port);
+    console.log('Server running port', port);
 })
